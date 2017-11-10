@@ -60,6 +60,14 @@ a {
     color:darkblue;
 }
 
+header {
+    overflow:hidden;
+    position: fixed;
+    top:0;
+    width:100%;
+    background-color: white;
+}
+
 nav {
     float:right;
     text-align: right;
@@ -84,4 +92,32 @@ nav li:last-child a {
 
 nav li a:hover{
     color:black;
+}
+
+section {
+    height:calc(100vh - 5em);
+    padding-top: 5em;
+    margin-top:10em;
+}
+
+section:first-of-type{
+    margin-top:0;
+}
+
+.flex {
+    display: flex;
+    height:100%;
+    min-height:20em;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex img {
+    height:calc(100vh - 10rem);
+}
+
+.flex .content img {
+    height:calc(80vh - 10rem);
 }
