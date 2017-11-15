@@ -4,6 +4,7 @@
 * {
     margin:0;
     padding:0;
+    /*border:solid 1px black;*/
 }
 
 html {
@@ -109,9 +110,9 @@ nav li a:hover{
 }
 
 section {
-    height:calc(100vh - 5em);
+    min-height:calc(100vh - 5em);
     padding-top: 5em;
-    margin-top:10em;
+    margin-top:10;
 }
 
 section:first-of-type{
@@ -209,9 +210,13 @@ footer ul li {
         margin-top:0.5em;
         float: none;
     }
+    section {
+        padding-top:7em;
+    }
+
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 540px) {
     .container {
         width:95%;
     }
@@ -235,4 +240,15 @@ footer ul li {
     .flex img {
         height:calc(100vh - 15rem);
     }
+
+    .flex .content:last-child .img img {
+        height:75%;
+        width:auto;
+    }
+
+    .img img {
+        height:auto;
+        width:40vw;
+    }
+
 }
