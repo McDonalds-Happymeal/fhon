@@ -26,6 +26,12 @@ h1 {
     display:inline;
 }
 
+
+button {
+    border:none;
+    background:transparent;
+}
+
 h2 {
     color:black;
     font-size: 2rem;
@@ -44,24 +50,28 @@ h1 span, h2 span{
 .prime {
     color:red;
     font-size: 1em;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .tuff {
     color:green;
     font-size: 1em;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .base {
     color:orangered;
     font-size: 1em;
+    font-family: 'Orbitron', sans-serif;
 }
 
 a {
     color:darkblue;
+    text-decoration: none;
 }
 
 header {
-    overflow:hidden;
+    /*overflow:hidden;*/
     position: fixed;
     top:0;
     width:100%;
@@ -70,12 +80,16 @@ header {
 
 nav {
     float:right;
-    text-align: right;
+    /*text-align: right;*/
     margin-top:2em;
 }
 
 nav li {
     display: inline;
+}
+
+.dropdown {
+    display:inline;
 }
 
 nav li a {
@@ -129,16 +143,96 @@ section:first-of-type{
     position: relative;
 }
 
+.dropdown {
+    position: relative;
+    display:inline-block;
+}
+
+.dropdown-content {
+    display:none;
+    position: absolute;
+    background-color: white;
+    min-width:5em;
+    z-index: 1;
+    width:100%;
+}
+
+.dropdown-content a {
+    display:block;
+    padding: 0.5em 1em;
+    text-align: left;
+    border-bottom:solid 1px grey;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display:block;
+}
+
+
 .img img {
     height: 100%;
     position: absolute;
     bottom:0;
     left: 0;
     right: 0;
-    margin: auto
-    
+    margin: auto;
+    z-index: -1;;
 }
 
 .flex .content:last-child .img img {
     height:75%;
+}
+
+footer {
+    margin-top:5em;
+    background-color: grey;
+    color:black !important;
+}
+
+footer ul {
+    padding:2em;
+    display:inline-block;
+    list-style-type: none;
+}
+
+footer ul li {
+    padding-left:1em;
+}
+
+@media screen and (max-width: 1100px) {
+    .container {
+        width:90%;
+    }
+
+    nav {
+        margin-top:0.5em;
+        float: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width:95%;
+    }
+
+    nav .active {
+        display:none;
+    }
+
+    nav li{
+        font-size: 0.75em;
+    }
+
+    .flex {
+        flex-direction:column;
+    }
+
+    .flex .text{
+        order: 99;
+    }
+
+    .flex img {
+        height:calc(100vh - 15rem);
+    }
 }
