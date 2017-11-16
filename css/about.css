@@ -1,0 +1,15 @@
+.flex img {
+    width:30vw;
+    height:auto;
+    border-radius: 50%;
+}
+
+.img {
+    text-align: right;
+}
+
+@media screen and (max-width: 540px) {
+    .flex img {
+        width:60vw;
+    }
+}
