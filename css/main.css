@@ -52,6 +52,12 @@ h1 span, h2 span{
     font-size: 0.6em;
 }
 
+.generic {
+    color:rgb(131, 131, 131);
+    font-size: 1em;
+    font-family: 'Orbitron', sans-serif;
+}
+
 .prime {
     color:red;
     font-size: 1em;
@@ -90,7 +96,7 @@ nav {
     margin-top:2em;
 }
 
-nav li {
+nav a {
     display: inline;
 }
 
@@ -98,7 +104,7 @@ nav li {
     display:inline;
 }
 
-nav li a {
+nav a {
     color:grey;
     text-decoration: none;
     border-right:solid 0.1em rgb(131, 131, 131);
@@ -106,11 +112,11 @@ nav li a {
     height:1em;
 }
 
-nav li:last-child a {
+nav a:last-child {
     border-right:none;
 }
 
-nav li a:hover{
+nav a:hover{
     color:black;
 }
 
