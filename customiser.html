@@ -6,39 +6,45 @@
         <meta name="author" content="Peter Maltby" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>fhon | Customiser</title>
+        <title>fhon | customiser</title>
         <link href="https://fonts.googleapis.com/css?family=Orbitron|Ubuntu" rel="stylesheet">
         <link rel="stylesheet" href="/css/main.css"/>
         
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="/js/main.js"></script>
+        <script src="/js/customiser.js"></script>
     </head>
     <body>
         <header>
             <div class="container">
                     <h1>fhon<span> | customiser</span></h1>
-                <nav>
-                    <ul>
-                        <li class="active"><a href="/index.html">Home</a></li>
+                    <nav>
+                        <a href="/index.html">Home</a>
                         <div class="dropdown products">
-                            <li class="dropdown"><a href="/products.html">Mobile Phones</a></li>
-                            <div class="dropdown-content">
+                            <div class="dropdown"><a href="/products.html">Mobile Phones</a>
+                                <div class="dropdown-content">
                                 <a href="/products/prime.html"><span class="prime">prime</span></a>
                                 <a href="/products/tuff.html"><span class="tuff">tuff</span></a>
                                 <a href="/products/base.html"><span class="base">base</span></a>
-                                <a href="/customiser.html">make yours</a>
+                                <a class="active" href="/customiser.html"><span class="generic">make yours</span></a>
                             </div>
                         </div>
-                        <li><a href="/about.html">About</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
-                        <li><a href="/guides.html">Guides</a></li>
-                    </ul>
+                    </div>
+                    <a href="/about.html">About</a>
+                    <a href="/contact.html">Contact</a>
+                    <a href="/guides.html">Guides</a>
                 </nav>
             </div>
         </header>
         <section id="Opener">
             <div class="container flex">
-                <div class="half">
-                    <h2>fhon<span> | built for more</span></h2>
+                <div id="options" class="half">
+                    <div id="frontPanel">
+                        <h3>Front Panel</h3>
+                        <div class="select">
+
+                        </div>
+                    </div>
                 </div>
                 <div class="half">
                     <img src="/assets/prime.png" alt="prime.png" />
@@ -48,21 +54,21 @@
         <footer>
             <div class="container">
                 <ul>
-                    <p>Our Products</p>
+                    <li><p>Our Products</p></li>
                     <li><a href="/products/prime.html">prime</a></li>
                     <li><a href="/products/tuff.html">tuff</a></li>
                     <li><a href="/products/base.html">base</a></li>
                 </ul>
 
                 <ul>
-                    <p>About fhon</p>
+                    <li><p>About fhon</p></li>
                     <li><a href="/about.html">about</a></li>
                     <li><a href="/contact.html">contact</a></li>
                     <li><a href="http://www.petermaltby.com/">creators Website</a></li>
                 </ul>
 
                 <ul>
-                    <p>Other</p>
+                    <li><p>Other</p></li>
                     <li><a href="/customiser.html">customiser</a></li>
                     <li><a href="/guides.html">guides</a></li>
                 </ul>
