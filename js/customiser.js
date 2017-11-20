@@ -40,20 +40,26 @@ window.onload = function() {
     Populate("frontPanel",frontPanel);
 }
 
-function Populate(location,resourse) {
-    location = document.getElementById(location);
-    location = location.getElementsByClassName("select")[0];
+function Populate(name,resourse) {
+    var area = document.getElementById(name);
+    area = area.getElementsByClassName("select")[0];
 
     for(var i = 0; i< resourse.length; i++) {
         var obj = resourse[i];
-        if (obj.id===options.location) {
-            location.insertAdjacentHTML("beforeend","<div class='option selected'><img src='/assets/customiser/textures/"+obj.texture+"' /></div>");
+        if (obj.id==eval("options."+name)) {
+            area.insertAdjacentHTML("beforeend","<div class='option selected'><img src='/assets/customiser/textures/"+obj.texture+"' /><p>"+obj.name+"</p></div>");
         }
         else {
-            location.insertAdjacentHTML("beforeend","<div class='option'><img src='/assets/customiser/textures/"+obj.texture+"' /></div>");
+            area.insertAdjacentHTML("beforeend",'<div class="option" onclick="selection(\''+name+'\','+obj.id+')" ><img src="/assets/customiser/textures/'+obj.texture+'" /><p>'+obj.name+'</p></div>');
         }
         
-        console.log(obj.name);
+        console.log(eval("options."+name));
     }
-    location.insertAdjacentHTML("beforeend","<p>some test html</p>")
+    //area.insertAdjacentHTML("beforeend","<p>some test html</p>")
+}
+
+function selection(name, id) {
+    console.log(eval("options."+name));
+    eval("options."+name+"=id");
+    //update();
 }
