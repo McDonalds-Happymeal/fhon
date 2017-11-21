@@ -64,10 +64,16 @@ var backPanel = [
     },
 ]
 
-var options = {
-    "frontPanel":0,
-    "backPanel":0
-};
+var options = [
+    {
+        "name":"frontPanel",
+        "selected":0
+    },
+    {
+        "name":"backPanel",
+        "selected":0
+    },
+]
 
 window.onload = function() {
     Populate("frontPanel",frontPanel);
@@ -80,12 +86,7 @@ function Populate(name,resourse) {
 
     for(var i = 0; i< resourse.length; i++) {
         var obj = resourse[i];
-        if (obj.id==eval("options."+name)) {
-            area.insertAdjacentHTML("beforeend","<div class='option selected'><img src='/assets/customiser/textures/"+obj.texture+"' /><p>"+obj.name+"</p></div>");
-        }
-        else {
-            area.insertAdjacentHTML("beforeend",'<div class="option" onclick="selection(\''+name+'\','+obj.id+')" ><img src="/assets/customiser/textures/'+obj.texture+'" /><p>'+obj.name+'</p></div>');
-        }
+            area.insertAdjacentHTML("beforeend",'<div class="option selected" onclick="selection(\''+name+'\','+obj.id+')" ><img src="/assets/customiser/textures/'+obj.texture+'" /><p>'+obj.name+'</p></div>');
         
         console.log(eval("options."+name));
     }
@@ -93,8 +94,30 @@ function Populate(name,resourse) {
 }
 
 function selection(name, id) {
-    console.log(eval("options."+name));
+    for(var i =0;i<options.length;i++) {
+        if(options[i].name==name) {
+            options[i].selected=id;
+        }
+    }
+    console.log(options);
     eval("options."+name+"=id");
-    //update();
+    update();
     //remove active tag from all selection and add active to location.id
+}
+
+function update() {
+    var element = document.getElementsByClassName("selected");
+    for(var i =0;i<element.length;i) {
+        element[i].classList.remove("selected");
+    }
+    var obj;
+    for(var i =0; i<options.length;i++) {
+        obj = document.getElementById(options[i].name);
+        obj = obj.getElementsByClassName("option")[options[i].selected];
+
+        obj.className += " selected";
+
+    }
+
+
 }
