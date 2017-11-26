@@ -155,7 +155,6 @@ function selection(name, id) {
 }
 
 function update() {
-    price = 0;
     var element = document.getElementsByClassName("selected");
     for(var i =0;i<element.length;i) {
         element[i].classList.remove("selected");
