@@ -1,0 +1,45 @@
+[
+    {
+        "id":0,
+        "name":"Plastic",
+        "price":0,
+        "texture":"grey.png"
+    },
+    {
+        "id":1,
+        "name":"Black Plastic",
+        "price":0,
+        "texture":"black.png"
+    },
+    {
+        "id":2,
+        "name":"Aluminium",
+        "price":2.99,
+        "texture":"metalSilver.png"
+    },
+    {
+        "id":3,
+        "name":"Titanium",
+        "price":2.99,
+        "texture":"metalBlack.png"
+    },
+    {
+        "id":4,
+        "name":"Mahogony",
+        "price":2.99,
+        "texture":"waveRed.png"
+    },
+    {
+        "id":5,
+        "name":"Oak",
+        "price":2.99,
+        "texture":"woodDark.png"
+    },
+    {
+        "id":6,
+        "name":"Pine",
+        "price":2.99,
+        "texture":"woodYellow.png"
+    }
+
+]
