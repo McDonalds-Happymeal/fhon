@@ -57,14 +57,13 @@ function drawoptions() {
     //area.innerHTML = "<!--wiped-->";
     area.innerHTML = '<div id="device"><h3>device</h3><div class="select"></div></div>';
     //area.insertAdjacentHTML("beforeend",'<div id="device"><h3>device</h3><div class="select"></div></div>');
-    console.log(state);
-
-    var numOptions = (device[state[0].id]).options;//hold number of options used for loops.
+    var numOptions = (device[state[0].id]).options.slice();//TIL javascript always copies by value except array. this was a tricky one to find.
+    console.log(numOptions);
     for(var i = 0; i< numOptions.length; i++) {
         area.insertAdjacentHTML("beforeend",'<div id="'+device[state[0].id].options[i]+'"><h3>'+device[state[0].id].options[i]+'</h3><div class="select"></div></div>');
     }
 
-    numOptions.unshift("device");//adds device top options array for generation
+    numOptions.unshift("device");//adds device as top options array for generation
 
 
     for(var i = 0; i<numOptions.length;i++) {//loops through each catgory generated above
@@ -80,10 +79,11 @@ function drawoptions() {
     }
 }
 
-function selection(name, id) {//html refers catagory and id to here for update.
-    if (name === "device") {//special case for device
-        console.log(id + " " + state[0].id);
-        state[0].id = id;
+function selection(name, ref) {//html refers catagory and id to here for update.
+    //debugger;
+    if (name == "device") {//special case for device
+        console.log(ref + " " + state[0].id);
+        state[0].id = ref;
         
         drawoptions();
     }else{

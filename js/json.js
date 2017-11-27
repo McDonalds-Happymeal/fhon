@@ -18,7 +18,7 @@ var device = [
         "name":"base",
         "price":49,
         "texture":"base.png",
-        "options":["frontPanel","backPanel"]
+        "options":["frontPanel"]
     }
 ];
 
