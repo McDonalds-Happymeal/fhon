@@ -1,0 +1,62 @@
+[
+    {
+        "id":0,
+        "name":"Plastic",
+        "price":0,
+        "texture":"grey.png"
+    },
+    {
+        "id":1,
+        "name":"Black Plastic",
+        "price":0,
+        "texture":"black.png"
+    },
+    {
+        "id":2,
+        "name":"Black Leather",
+        "price":2.99,
+        "texture":"leatherBlack.png"
+    },
+    {
+        "id":3,
+        "name":"Blue Leather",
+        "price":2.99,
+        "texture":"leatherBlue.png"
+    },
+    {
+        "id":4,
+        "name":"Red Leather",
+        "price":2.99,
+        "texture":"leatherRed.png"
+    },
+    {
+        "id":5,
+        "name":"Aluminium",
+        "price":9.99,
+        "texture":"metal_silver.png"
+    },
+    {
+        "id":6,
+        "name":"Titanium",
+        "price":9.99,
+        "texture":"metalBlack.png"
+    },
+    {
+        "id":7,
+        "name":"Maghogony",
+        "price":4.99,
+        "texture":"waveRed.png"
+    },
+    {
+        "id":8,
+        "name":"Oak",
+        "price":4.99,
+        "texture":"woodDark.png"
+    },
+    {
+        "id":9,
+        "name":"Pine",
+        "price":4.99,
+        "texture":"woodYellow.png"
+    },
+]
