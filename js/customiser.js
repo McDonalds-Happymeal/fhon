@@ -16,11 +16,10 @@ var defaults = [
     },
     {
         "device":"base",
-        "frontPanel":0,
-        "selected":[0]
+        "selected":[0,0]
     }
 ];
-
+front = true; //global var for display to render front or back.
 
 window.onload = function() {
     initialise();
@@ -44,7 +43,8 @@ function initialise() {
     console.log(options);
     
     drawoptions();
-
+    drawdisplay();
+    drawPhone();
 
 }
 
@@ -77,6 +77,12 @@ function drawoptions() {
     }
 
     update();
+}
+
+function drawdisplay() {
+    var area = document.getElementById("display");
+    area.innerHTML = '<div id="render"></div><div class="select"><div class="option" onclick="displaySide()" ><img src="/assets/flip.png" /><p>front/back</p></div>    <div class="option" onclick="clearmem()" ><img src="/assets/clear.png" /><p>start again</p></div></div>';
+    
 }
 
 function selection(name, ref) {//html refers catagory and id to here for update.
@@ -114,5 +120,27 @@ function update() {
         element[i].getElementsByClassName("option")[array[i-1]].className += " selected";
     }
 
+    drawPhone();
     localStorage.setItem("options", JSON.stringify(state));
+}
+
+//not going to lie the JS rewrite has not improved my horrible code; one up point is that i actualy know what my code does now.
+
+function displaySide() {
+    front = !front;
+    //console.log(front);
+    drawPhone();
+}
+
+function clearmem() {
+    localStorage.clear();
+    location.reload(); 
+}
+
+function drawPhone() {
+    var area = document.getElementById("render");
+    var path = "/assets/customiser/"+device[state[0].id].name;
+    if (front) {
+
+    }
 }

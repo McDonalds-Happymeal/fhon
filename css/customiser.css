@@ -1,4 +1,4 @@
-.select .option {
+.option {
     /*width: 4rem;
     height: 4rem;
     overflow:hidden;*/
@@ -26,12 +26,12 @@
     font-size: 0.5rem;
 }
 
-.select .option:hover {
+.option:hover {
     border:solid 1px black;
     transform: scale(1.25,1.25);
 }
 
-.select .selected {
+.selected {
     border:solid 1px black;
     transform: scale(1.25,1.25);
 }
