@@ -44,8 +44,8 @@ function initialise() {
     
     drawoptions();
     drawdisplay();
+    update();
     drawPhone();
-
 }
 
 
@@ -76,12 +76,11 @@ function drawoptions() {
         }
     }
 
-    update();
 }
 
 function drawdisplay() {
     var area = document.getElementById("display");
-    area.innerHTML = '<div id="render"></div><div class="select"><div class="option" onclick="displaySide()" ><img src="/assets/flip.png" /><p>front/back</p></div>    <div class="option" onclick="clearmem()" ><img src="/assets/clear.png" /><p>start again</p></div></div>';
+    area.innerHTML = '<canvas id="render" width="320" height="620"></canvas><div class="select"><div class="option" onclick="displaySide()" ><img src="/assets/flip.png" /><p>front/back</p></div>    <div class="option" onclick="clearmem()" ><img src="/assets/clear.png" /><p>start again</p></div></div>';
     
 }
 
@@ -138,9 +137,29 @@ function clearmem() {
 }
 
 function drawPhone() {
-    var area = document.getElementById("render");
-    var path = "/assets/customiser/"+device[state[0].id].name;
-    if (front) {
+    var canvas = document.getElementById("render");
+    var context = canvas.getContext("2d");
 
+    canvas.height = window.innerHeight*0.7;
+    canvas.width = (canvas.height/620)*320;
+
+    var images = ["/assets/customiser/prime/backPanel/woodDark.png","/assets/customiser/prime/FrontPanel/metalBlack.jpg","/assets/customiser/prime/front.png"];
+
+    for(var i = 0;i<images.length;i++) {
+        var cheat = drawImage(canvas,images[i]);//the only correct variable name in this program.
+        
+        
     }
+
+}
+
+function drawImage(canvas,location) {
+    var context = canvas.getContext("2d");
+    var img = new Image;
+    img.src = location;
+
+    img.onload = function() {
+        context.drawImage(img,0,0,canvas.width,canvas.height);
+    }
+    return true;
 }
