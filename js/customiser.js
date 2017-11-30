@@ -42,10 +42,17 @@ function initialise() {
 
     console.log(options);
     
+    loadImages();
     drawoptions();
     drawdisplay();
     update();
     drawPhone();
+}
+
+
+function loadImages() {
+    
+
 }
 
 
@@ -69,7 +76,7 @@ function drawoptions() {
         area = area.getElementsByClassName("select")[0];
 
         var resourse = eval(numOptions[i]);
-
+        
         for(var k = 0; k< resourse.length; k++) {//goes through json for catagory and populates options
             var obj = resourse[k];
                 area.insertAdjacentHTML("beforeend",'<div class="option" onclick="selection(\''+(i)+'\','+obj.id+')" ><img src="/assets/customiser/textures/'+obj.texture+'" /><p>'+obj.name+'</p></div>');
@@ -112,6 +119,9 @@ function update() {
 
     var array = state[(state[0].id)+1].selected.slice();
     //array.pop();
+    if (state[0].id==2) {
+        array.pop();
+    }
 
     element = document.getElementById("options");
     element = element.getElementsByClassName("select");
@@ -136,30 +146,42 @@ function clearmem() {
     location.reload(); 
 }
 
+function loadImage(imagePath) {
+    return new Promise((resolve, reject) => {
+        let image = new Image();
+        image.addEventListener("load", () => {
+            resolve(image);
+        });
+        image.addEventListener("error", (err) => {
+            reject(err);
+        });
+        image.src = imagePath;
+    });
+}
+
 function drawPhone() {
     var canvas = document.getElementById("render");
     var context = canvas.getContext("2d");
 
     canvas.height = window.innerHeight*0.7;
     canvas.width = (canvas.height/620)*320;
+    
+    var route = "/assets/customiser/"+device[state[0].id].name+"/";
 
-    var images = ["/assets/customiser/prime/backPanel/woodDark.png","/assets/customiser/prime/FrontPanel/metalBlack.jpg","/assets/customiser/prime/front.png"];
+    var sources = [route+"back.png"];
+    sources.push(route+"backPanel/"+backPanel[state[state[0].id+1].selected[1]].texture);
+    sources.push(route+"FrontPanel/"+frontPanel[state[state[0].id+1].selected[0]].texture)
+    sources.push(route+"front.png");
 
-    for(var i = 0;i<images.length;i++) {
-        var cheat = drawImage(canvas,images[i]);//the only correct variable name in this program.
-        
-        
+    if (!front) {sources.reverse();}
+
+    Promise
+    .all(sources.map(i => loadImage(i)))
+    .then((images) => {
+        images.forEach((image) => {
+            context.drawImage(image, 0, 0, canvas.width, canvas.height);
+        });
+    }).catch((err) => {
+        console.error(err);
+    });
     }
-
-}
-
-function drawImage(canvas,location) {
-    var context = canvas.getContext("2d");
-    var img = new Image;
-    img.src = location;
-
-    img.onload = function() {
-        context.drawImage(img,0,0,canvas.width,canvas.height);
-    }
-    return true;
-}
