@@ -1,3 +1,5 @@
+//big dumb of json included in JS file so i dont have to make an AJAX call to everyfile.
+//pretty self explantory what it all does.
 var device = [
     {
         "id":0,
@@ -130,3 +132,5 @@ var backPanel = [
         "texture":"woodYellow.png"
     },
 ];
+
+
