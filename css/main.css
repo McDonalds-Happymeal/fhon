@@ -253,6 +253,15 @@ footer ul li {
         min-height: auto;
     }
 
+    h1 {
+        font-size: 2rem;
+    }
+
+    h1 span, h2 span{
+        font-size: 0.6em;
+    }
+
+
     /*.flex .content:last-child .img img {
         height:75%;
         width:auto;

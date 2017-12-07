@@ -30,12 +30,14 @@ window.onload = function() {
 function initialise() {
 
     //local storage 
-    if (localStorage.getItem("options")==null) {
-        console.log("local storage loading attempted");
-        localStorage.setItem("options", JSON.stringify(defaults));
-    }
+    if (localStorage) {
+        if (localStorage.getItem("options")==null) {
+            console.log("local storage loading attempted");
+            localStorage.setItem("options", JSON.stringify(defaults));
+        }
 
-    state = JSON.parse(localStorage.getItem("options"));
+        state = JSON.parse(localStorage.getItem("options"));
+    }
     //loads local stoage data for use in program.
     //global for my sanity.
 
@@ -161,7 +163,7 @@ function drawPhone() {
     var canvas = document.getElementById("render");
     var context = canvas.getContext("2d");//setup canvas.
 
-    canvas.height = window.innerHeight*0.7;//special heights to make height more responsive to screen size.
+    canvas.height = window.innerHeight*0.6;//special heights to make height more responsive to screen size.
     canvas.width = (canvas.height/620)*320;
     
     var route = "/assets/customiser/"+device[state[0].id].name+"/";//generic route that all files use.

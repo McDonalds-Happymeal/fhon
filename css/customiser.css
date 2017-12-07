@@ -1,3 +1,5 @@
+
+
 .option {
     /*width: 4rem;
     height: 4rem;
@@ -19,7 +21,7 @@
     flex-direction: row;
     flex-wrap:wrap;
     justify-content: flex-start;
-    width:40vw;
+    width:auto;
 }
 
 .option p {
@@ -34,4 +36,29 @@
 .selected {
     border:solid 1px black;
     transform: scale(1.25,1.25);
+}
+
+#display {
+    align-self:flex-start;
+}
+
+@media screen and (max-width: 540px) {
+    .select {
+        width:100%;
+    }
+    .flex {
+        padding-top : 0;
+    }
+
+    .half {
+        padding-top : rem;
+    }
+    
+}
+
+@media screen and (min-width: 540px) {
+    #options {
+        overflow-y: scroll;
+        height : calc(90vh - 5rem)
+    }
 }
