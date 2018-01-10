@@ -1,0 +1,27 @@
+.menu {
+    width:20%;
+    display:inline-block;
+    vertical-align: top;
+}
+
+img{
+    width:100%;
+}
+
+.option :hover{
+    color:black;
+}
+
+#content {
+    width:79%;
+    display: inline-block;
+}
+
+@media screen and (max-width: 1080px) {
+ .menu {
+     width:100%;
+ }
+ #content {
+     width:100%;
+ }
+}

@@ -81,6 +81,14 @@ a {
     text-decoration: none;
 }
 
+ul {
+    padding-left:3em;
+}
+
+ol {
+    padding-left:3em;
+}
+
 header {
     /*overflow:hidden;*/
     position: fixed;
