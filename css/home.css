@@ -11,6 +11,10 @@
     height:75%;
 }
 
+.sound {
+    display:inline-block;
+}
+
 @media screen and (max-width: 540px) {
 
     .flex .content:last-child .img img {
